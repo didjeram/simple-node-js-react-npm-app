@@ -7,6 +7,7 @@ pipeline {
     }
     environment {
         HOME = '.'
+        CI = 'true'
     }
     stages {
         stage('Build') { 
@@ -15,5 +16,11 @@ pipeline {
                 sh 'npm start'
             }
         }
+        stage('Test') {
+            steps {
+                sh './jenkins/scripts/test.sh'
+            }
+        }
+        
     }
 }
