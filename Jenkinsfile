@@ -13,7 +13,6 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm install' 
-                sh 'npm start'
             }
         }
         stage('Test') {
@@ -21,6 +20,6 @@ pipeline {
                 sh './jenkins/scripts/test.sh'
             }
         }
-        
+
     }
 }
